@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <script>
+        let height = prompt("højde?");
+        let weight = prompt("vægt?");
+
+        let bmi = weight / (height * height);
+
+        bmi = Math.round(bmi);
+
+        if (isNaN(bmi)) {
+            alert(`fejlllllll \n prøv igen`);
+
+            if (confirm) {
+                location.reload();
+            }
+        } else if (bmi >= 0) {
+            if (confirm(`dit bmi er${bmi} \n vil du have din fedmeklasse?`)) {
+
+                if (bmi < 19) {
+                    alert("fedmeklasse: undervægtig");
+                } else if (bmi >= 20 && bmi <= 25) {
+                    alert("fedmeklasse: normal");
+                } else if (bmi > 25 && bmi <= 30) {
+                    alert("fedmeklasse: overvægtig");
+                } else if (bmi > 30 && bmi <= 35) {
+                    alert("fedmeklasse: fed");
+                } else if (bmi > 35 && bmi <= 40) {
+                    alert("fedmeklasse: svær fedme");
+                } else if (bmi > 40) {
+                    alert("fedmeklasse: ekstremt fed");
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
