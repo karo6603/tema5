@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <script>
+        let length = prompt("længde?");
+        let width = prompt("bredde?");
+        let area = areal(length, width);
+
+
+        function areal(l, w) {
+            let a = (l * w);
+            if (a == 0) {
+                return (`skal være tal. \n Prøv igen`);
+            } else if (isNaN(a)) {
+                return (`fejl. \n prøv med tal`);
+            } else {
+                alert(`arealet er ${a}. \n vil du starte forfra?`);
+            }
+        }
+
+        confirm(area);
+
+        if (confirm) {
+            location.reload();
+        }
+    </script>
+
+</body>
+
+</html>
