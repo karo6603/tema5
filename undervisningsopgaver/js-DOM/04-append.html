@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <style>
+        #firkant {
+            width: 200px;
+            height: 200px;
+            background-color: green;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        #cirkel {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            border-radius: 50%;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+    <div id="firkant"></div>
+    <div id="cirkel"></div>
+
+    <script>
+        let frog = `http://helf-kea.dk/test/frog.png`;
+        let pig = `https://i.dlpng.com/static/png/284861_preview.png`;
+        let fox = `http://helf-kea.dk/test/fox.png`;
+
+        document.querySelector("#firkant").innerHTML = `<img src = ${frog} alt= "frog">`;
+        document.querySelector("#cirkel").innerHTML = `<img src = ${pig} alt= "pig">`;
+        document.querySelector("#cirkel").innerHTML += `<img src = ${fox} alt= "fox">`;
+    </script>
+
+</body>
+</html>
