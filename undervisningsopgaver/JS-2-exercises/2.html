@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>js-oevelse-2</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Optima, sans-serif;
+            font-size: 1.3rem;
+            line-height: 1.8rem;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .h1 {
+            padding: 0;
+            margin: 0 0 3rem 0;
+            font-size: 3rem;
+            line-height: 3rem;
+            color: burlywood;
+        }
+
+        footer {
+            display: inline-block;
+            width: 50vw;
+            text-align: left;
+            margin: 50px;
+        }
+
+        #butWrapper {
+            display: inline-block;
+            width: 30vw;
+            height: 30vw;
+            margin: 50px;
+        }
+
+        #bigBut {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 30vw;
+            height: 30vw;
+            border: 1px solid silver;
+            border-radius: 30vw;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="page">
+        <header>
+            <h1 class="h1"> JS øvelse 2 </h1>
+        </header>
+        <main>
+            <section id="butWrapper">
+                <div id="bigBut">
+                    Hover mig !
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <script>
+        let but = document.querySelector("#butWrapper");
+        let bigBut = document.querySelector("#bigBut");
+
+        but.addEventListener("mouseover", skift);
+
+        function skift() {
+            bigBut.textContent = "dont touch me";
+
+            but.addEventListener("mouseout", skiftIgen);
+        }
+
+        function skiftIgen() {
+            bigBut.textContent = "hover mig";
+
+            but.addEventListener("mouseover", skift);
+        }
+    </script>
+</body>
+
+</html>
