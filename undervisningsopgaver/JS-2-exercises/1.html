@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>js-oevelse-1b</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Optima, sans-serif;
+            font-size: 1.3rem;
+            line-height: 1.8rem;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .h1 {
+            padding: 0;
+            margin: 0 0 3rem 0;
+            font-size: 3rem;
+            line-height: 3rem;
+            color: burlywood;
+        }
+
+        footer {
+            display: inline-block;
+            width: 50vw;
+            text-align: left;
+            margin: 50px;
+        }
+
+        #bold {
+            display: inline-block;
+            width: 50vw;
+            height: 50vw;
+            border: 1px solid silver;
+            border-radius: 50vw;
+            margin: 50px;
+        }
+
+        button {
+            display: inline-block;
+            border: none;
+            border-radius: 5rem;
+            padding: .3rem 1rem;
+            font-size: 2rem;
+            color: white;
+            border: 1px solid silver;
+            cursor: pointer;
+        }
+
+        /*********************/
+
+        .red {
+            background-color: tomato;
+        }
+
+        .yellow {
+            background-color: burlywood;
+        }
+
+        .blue {
+            background-color: dodgerblue;
+        }
+
+        /*********************/
+    </style>
+
+</head>
+
+<body>
+    <div id="page">
+        <header>
+            <h1 class="h1"> JS øvelse 1 </h1>
+        </header>
+        <main>
+            <section>
+                <button id="redBut" class="red">Rød</button>
+                <button id="yellowBut" class="yellow">Gul</button>
+                <button id="blueBut" class="blue">Blå</button>
+            </section>
+            <div id="bold"></div>
+        </main>
+    </div>
+
+    <script>
+        document.querySelector("#redBut").addEventListener("click", red);
+        document.querySelector("#yellowBut").addEventListener("click", yellow);
+        document.querySelector("#blueBut").addEventListener("click", blue);
+
+        function red() {
+            document.querySelector("#bold").classList.add("red");
+            document.querySelector("#bold").classList.remove("yellow");
+            document.querySelector("#bold").classList.remove("blue");
+        }
+
+        function yellow() {
+            document.querySelector("#bold").classList.add("yellow");
+
+            document.querySelector("#bold").classList.remove("red");
+            document.querySelector("#bold").classList.remove("blue");
+        }
+
+        function blue() {
+            document.querySelector("#bold").classList.add("blue");
+
+            document.querySelector("#bold").classList.remove("yellow");
+            document.querySelector("#bold").classList.remove("red");
+        }
+    </script>
+
+</body>
+
+</html>
