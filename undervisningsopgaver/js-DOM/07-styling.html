@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+
+    <style>
+        #firkant {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            line-height: 100px;
+            text-align: center;
+            position: static;
+        }
+
+
+
+        #cirkel {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            border-radius: 50%;
+            line-height: 100px;
+            text-align: center;
+            position: absolute;
+        }
+
+        .op {
+            top: 1vw;
+        }
+
+        .ned {
+            top: 15vw;
+        }
+
+        img {
+            width: 80px;
+            height: 80px;
+        }
+    </style>
+
+    <div id="firkant"></div>
+    <div id="cirkel" class="ned"></div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            console.log("start");
+            let firkant = document.querySelector("#firkant");
+            let cirkel = document.querySelector("#cirkel");
+
+            firkant.innerHTML = `<img src = "http://helf-kea.dk/test/frog.png">`;
+
+            cirkel.innerHTML = `<img src = "https://i.dlpng.com/static/png/284861_preview.png">`;
+
+            document.removeEventListener("DOMContentLoaded", start);
+
+            document.querySelector("#firkant").addEventListener("click", hopOp);
+            document.querySelector("#cirkel").addEventListener("click", hopNed);
+        }
+
+        function hopOp() {
+
+            document.querySelector("#cirkel").addEventListener("click", hopNed);
+            document.querySelector("#firkant").removeEventListener("click", hopOp);
+
+            document.querySelector("#cirkel").classList.add("op");
+            document.querySelector("#cirkel").classList.remove("ned");
+
+
+
+        }
+
+
+
+        function hopNed() {
+            document.querySelector("#firkant").addEventListener("click", hopOp);
+
+            document.querySelector("#cirkel").removeEventListener("click", hopNed);
+
+            document.querySelector("#cirkel").classList.add("ned");
+            document.querySelector("#cirkel").classList.remove("op");
+        }
+    </script>
+
+</body>
+</html>
