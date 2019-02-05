@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>A</title>
+    <style>
+        #box,
+        #bax {
+            width: 200px;
+            height: 200px;
+            background-color: wheat;
+            padding: 20px;
+            margin: 10px;
+        }
+
+        button {
+            font-size: 2rem;
+            margin: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <button id="klik">
+        klik
+    </button>
+    <button id="slet">
+        slet
+    </button>
+    <button id="html">
+        html
+    </button>
+    <button id="flyt">
+        flyt
+    </button>
+    <div id="box"></div>
+    <div id="bax"></div>
+
+    <script>
+        document.querySelector("#klik").addEventListener("click", show);
+
+        function show() {
+            document.querySelector("#box").textContent = "KLIK";
+        }
+
+        document.querySelector("#slet").addEventListener("click", reset);
+
+        function reset() {
+            document.querySelector("#box").textContent = "";
+        }
+
+        document.querySelector("#html").addEventListener("click", html);
+
+        function html() {
+            document.querySelector("#box").innerHTML = "<h2>hej</h2> <p>karo</p>";
+        }
+
+        document.querySelector("#flyt").addEventListener("click", move);
+
+        function move() {
+            document.querySelector("#box").innerHTML = "";
+
+            document.querySelector("#bax").innerHTML = "<h2>hej</h2> <p>karo</p>";
+        }
+    </script>
+</body>
+
+</html>
