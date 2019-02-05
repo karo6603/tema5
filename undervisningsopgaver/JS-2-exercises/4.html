@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>js-oevelse-4</title>
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: Optima, sans-serif;
+            font-size: 1.3rem;
+            line-height: 1.8rem;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        .h1 {
+            padding: 0;
+            margin: 0 0 3rem 0;
+            font-size: 3rem;
+            line-height: 3rem;
+            color: burlywood;
+        }
+
+        footer {
+            display: inline-block;
+            width: 50vw;
+            text-align: left;
+            margin: 50px;
+        }
+
+        #box {
+            display: inline-block;
+            width: 30vw;
+            height: 30vw;
+            line-height: 10vw;
+            letter-spacing: -2vw;
+            text-align: center;
+            margin: 3vw;
+            border-radius: 10px;
+            font-size: 10vw;
+            border: 5px solid tomato;
+            cursor: pointer;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div id="page">
+        <header>
+            <h1 class="h1"> JS øvelse 4 </h1>
+            <h3 class="h1"> Sur - glad </h3>
+        </header>
+        <main>
+            <section>
+                <div id="box"> </div>
+            </section>
+        </main>
+
+    </div>
+
+    <script>
+        let box = document.querySelector("#box");
+
+        document.addEventListener("DOMContentLoaded", glad);
+
+        function glad() {
+            box.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Symb_Glad.svg/2000px-Symb_Glad.svg.png">`;
+
+            box.addEventListener("click", sur);
+            box.removeEventListener("click", glad);
+        }
+
+
+
+        function sur() {
+            box.innerHTML = `<img src="https://anneliemolin.files.wordpress.com/2014/10/41618-toprestauranter-fr-en-sur-smiley.jpg?w=480">`;
+            box.addEventListener("click", glad);
+            box.removeEventListener("click", sur);
+        }
+    </script>
+</body>
+
+</html>
