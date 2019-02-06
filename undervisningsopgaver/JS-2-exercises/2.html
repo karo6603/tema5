@@ -73,6 +73,8 @@
         let bigBut = document.querySelector("#bigBut");
 
         but.addEventListener("mouseover", skift);
+        but.addEventListener("click", klik);
+        but.addEventListener("dblclick", firkant);
 
         function skift() {
             bigBut.textContent = "dont touch me";
@@ -84,6 +86,37 @@
             bigBut.textContent = "hover mig";
 
             but.addEventListener("mouseover", skift);
+        }
+
+        function klik() {
+            bigBut.textContent = "please dont";
+
+            but.addEventListener("click", klikIgen);
+            but.removeEventListener("click", klik);
+        }
+
+        function klikIgen() {
+            bigBut.textContent = "seriously";
+
+            but.addEventListener("click", klik);
+            but.removeEventListener("click", klikIgen);
+        }
+
+        function firkant() {
+            bigBut.style.borderRadius =
+                "0vw";
+            bigBut.style.backgroundColor = "red";
+
+            but.removeEventListener("dblclick", firkant);
+            but.addEventListener("dblclick", firkantIgen);
+        }
+
+        function firkantIgen() {
+            bigBut.style.borderRadius = "30vw";
+            bigBut.style.backgroundColor = "white";
+
+            but.removeEventListener("dblclick", firkantIgen);
+            but.addEventListener("dblclick", firkant);
         }
     </script>
 </body>
