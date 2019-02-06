@@ -87,9 +87,26 @@
     </div>
 
     <script>
-        document.querySelector("#redBut").addEventListener("click", red);
-        document.querySelector("#yellowBut").addEventListener("click", yellow);
-        document.querySelector("#blueBut").addEventListener("click", blue);
+        document.querySelector("#redBut").addEventListener("click", fjern);
+        document.querySelector("#yellowBut").addEventListener("click", fjern);
+        document.querySelector("#blueBut").addEventListener("click", fjern);
+        document.querySelector("#bold").addEventListener("click", fjern);
+
+
+        function fjern() {
+
+            if (this.matches("#bold")) {
+                document.querySelector("#bold").classList.remove("red");
+                document.querySelector("#bold").classList.remove("yellow");
+                document.querySelector("#bold").classList.remove("blue");
+            } else if (this.classList.contains("red")) {
+                red();
+            } else if (this.classList.contains("yellow")) {
+                yellow();
+            } else if (this.classList.contains("blue")) {
+                blue();
+            }
+        }
 
         function red() {
             document.querySelector("#bold").classList.add("red");
