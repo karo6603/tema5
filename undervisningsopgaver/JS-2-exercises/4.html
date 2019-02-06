@@ -46,9 +46,14 @@
             cursor: pointer;
         }
 
-        img {
-            width: 100px;
-            height: 100px;
+        .glad {
+            background-image: url(https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Symb_Glad.svg/2000px-Symb_Glad.svg.png);
+            background-size: contain;
+        }
+
+        .sur {
+            background-image: url(https://anneliemolin.files.wordpress.com/2014/10/41618-toprestauranter-fr-en-sur-smiley.jpg?w=480);
+            background-size: contain;
         }
     </style>
 
@@ -62,7 +67,7 @@
         </header>
         <main>
             <section>
-                <div id="box"> </div>
+                <div id="box" class="glad"> </div>
             </section>
         </main>
 
@@ -70,22 +75,19 @@
 
     <script>
         let box = document.querySelector("#box");
+        let glad = document.querySelector(".glad");
+        let sur = document.querySelector(".sur");
 
-        document.addEventListener("DOMContentLoaded", glad);
-
-        function glad() {
-            box.innerHTML = `<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Symb_Glad.svg/2000px-Symb_Glad.svg.png">`;
-
-            box.addEventListener("click", sur);
-            box.removeEventListener("click", glad);
-        }
+        box.addEventListener("click", smiley);
 
 
+        function smiley() {
 
-        function sur() {
-            box.innerHTML = `<img src="https://anneliemolin.files.wordpress.com/2014/10/41618-toprestauranter-fr-en-sur-smiley.jpg?w=480">`;
-            box.addEventListener("click", glad);
-            box.removeEventListener("click", sur);
+            if (box.classList.contains('glad')) {
+                box.classList.toggle('sur');
+            } else {
+                box.classList.toggle('glad');
+            }
         }
     </script>
 </body>
