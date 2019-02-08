@@ -1,0 +1,84 @@
+
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Tangerine" rel="stylesheet">
+</head>
+
+<body>
+    <div id="liste">
+    </div>
+
+    <style>
+        html {
+            background-color: lavender;
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin: 5vw;
+        }
+
+        .dyr {
+            border: 2px dotted grey;
+            margin: 4px;
+            padding: 10px;
+            background-color: ghostwhite
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #9207f8;
+            font-family: 'Tangerine', cursive;
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+        }
+    </style>
+
+    <script>
+        let alleDyr = [];
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            let dest = document.querySelector("#liste");
+            async function getJson() {
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
+                alleDyr = await jsonData.json();
+                visDyr();
+            }
+
+            function visDyr() {
+                alleDyr.forEach(dyr => {
+                    dest.innerHTML += `
+                    <div class="dyr">
+                        <h2>${dyr.navn}</h2>
+<a href="http://github.com/${dyr.github}">Github konto</a>
+                        <img src= "${dyr.billede}">
+
+                    </div>
+`;
+                })
+            }
+            getJson()
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+

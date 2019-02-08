@@ -1,0 +1,33 @@
+[{
+        "navn": "gris",
+        "type": "pattedyr",
+        "billede": "http://helf-kea.dk/test/gris.png",
+        "levested": "svinefarme"
+            },
+    {
+        "navn": "frø",
+        "type": "amfibie",
+        "billede": "https://www.freeiconspng.com/uploads/frog-icon-27.png",
+        "levested": "vand"
+            },
+    {
+        "navn": "ræv",
+        "type": "pattedyr",
+        "billede": "http://helf-kea.dk/test/fox.png",
+        "levested": "skov"
+            },
+    {
+        "navn": "sild",
+        "type": "fisk",
+        "billede": "http://helf-kea.dk/test/sild.jpg",
+        "levested": "vand"
+            },
+    {
+        "navn": "krokodille",
+        "type": "pattedyr",
+        "billede": "http://helf-kea.dk/test/kroko.jpg",
+        "levested": "Amazona"
+            }
+
+
+        ]

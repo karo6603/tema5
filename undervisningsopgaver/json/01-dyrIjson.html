@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+    <div id="liste">
+    </div>
+
+    <style>
+        #liste {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .dyr {
+            border: 1px solid black;
+            margin: 1px;
+            padding: 6px;
+        }
+    </style>
+
+    <script>
+        let alleDyr = [];
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            let dest = document.querySelector("#liste");
+            async function getJson() {
+                let jsonData = await fetch("dyr.json");
+                alleDyr = await jsonData.json();
+                visDyr();
+            }
+
+            function visDyr() {
+                alleDyr.forEach(dyr => {
+                    dest.innerHTML += `
+                    <div class="dyr">
+                        <h3>Navn: ${dyr.navn}</h3>
+                        <p>Type: ${dyr.type} <br> Levested: ${dyr.levested}</p>
+                        <img src= "${dyr.billede}">
+                    </div>
+`;
+                })
+            }
+            getJson()
+        }
+    </script>
+</body>
+</html>
