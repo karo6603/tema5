@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babushka</title>
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:300|Share+Tech+Mono|Stalinist+One" rel="stylesheet">
+</head>
+
+<body>
+    <div id="splash"></div>
+    <div id="liste">
+
+    </div>
+
+    <style>
+        #splash {
+            font-size: 10rem;
+            font-family: 'Stalinist One', cursive;
+            text-align: center;
+            background-color: rgba(205, 92, 92, 0.86);
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin: 5vw;
+        }
+
+        .retter {
+            margin: 4px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+        }
+
+        img {
+            width: 400px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        p {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #readmore p {
+            font-family: 'Cutive Mono', monospace;
+        }
+
+    </style>
+
+    <script>
+        let alleRetter = [];
+        document.addEventListener("DOMContentLoaded", start);
+        let dest = document.querySelector("#liste");
+        let splash = document.querySelector("#splash");
+
+
+
+
+        function start() {
+
+            async function getJson() {
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1jxxxFoWBuMJ1qhQ9BQIAyKHmP38XtAF9_sQr0xo5JLo");
+                alleRetter = await jsonData.json();
+                visRetter();
+            }
+
+            function visRetter() {
+                alleRetter.forEach(retter => {
+                    splash.textContent = `Babushka`;
+                    dest.innerHTML += `
+                    <div class="retter">
+                        <h2>${retter.navn}</h2>
+<img src="imgs/small/${retter.billede}-sm.jpg">
+<p>${retter.kort}</p>
+<p>Pris: ${retter.pris},-</p>
+
+<div id="readmore">
+        <p>Læs mere</p></div>
+</div>
+
+`;
+
+                    //                    let read = document.querySelector("#readmore");
+                    //                    let forklaring = document.querySelector("#retter p");
+                    //
+                    //
+                    //                    read.addEventListener("click", readMore);
+                    //
+                    //                    function readMore() {
+                    //                        read.removeEventListener("click", readMore);
+                    //                        read.addEventListener("click", readMoreAgain);
+                    //
+                    //                        forklaring.textContent = `${retter.lang}`;
+                    //                    }
+                    //
+                    //                    function readMoreAgain() {
+                    //                        read.addEventListener("click", readMore);
+                    //                        read.removeEventListener("click", readMoreAgain);
+                    //
+                    //                        forklaring.textContent = `${retter.kort}`;
+                    //                    }
+                })
+            }
+            getJson()
+
+
+        }
+
+    </script>
+</body>
+
+</html>
