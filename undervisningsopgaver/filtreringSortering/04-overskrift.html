@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,8 +10,9 @@
 </head>
 
 <body>
+    <h1>Alle</h1>
     <div class="menu">
-        <h1>Alle</h1>
+
         <button class="filter valgt" data-hold="alle">Alle</button>
         <button class="filter" data-hold="a">Hold A</button>
         <button class="filter" data-hold="b">Hold B</button>
@@ -63,6 +64,11 @@
         .valgt {
             background-color: blueviolet;
         }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+        }
     </style>
 
     <script>
@@ -99,7 +105,6 @@
 
                 function filtrering() {
                     filter = this.getAttribute("data-hold");
-
                     document.querySelector("h1").textContent = this.textContent;
                     visDyr();
 
@@ -109,11 +114,5 @@
         }
     </script>
 </body>
+
 </html>
-
-
-
-
-
-
-
