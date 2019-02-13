@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Babushka</title>
+    <link href="https://fonts.googleapis.com/css?family=Cutive+Mono|Roboto:300|Share+Tech+Mono|Stalinist+One" rel="stylesheet">
+</head>
+
+<style>
+    html,
+    body,
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    img {
+        height: 300px;
+        margin: 50px auto;
+    }
+
+    h2 {
+        font-family: 'Share Tech Mono', monospace;
+        margin-top: 40px;
+    }
+
+    p {
+        font-family: 'Roboto', sans-serif;
+        margin: 15px;
+    }
+
+    header {
+        background-color: #ffdf98;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+    }
+
+    #singleview {
+        box-sizing: border-box;
+        width: 100vw;
+        height: 100vh;
+        background-color: white;
+    }
+
+    #indhold {
+        box-sizing: border-box;
+        background-color: white;
+        width: 60vw;
+        height: 60vh;
+        margin: auto;
+        text-align: center;
+    }
+
+    #tilbage {
+        box-sizing: border-box;
+        text-align: right;
+    }
+
+    #tilbage button {
+        font-size: 2em;
+        background-color: white;
+        color: indianred;
+        border: none;
+        cursor: grab;
+        margin-right: 50px;
+        margin-top: 10px;
+    }
+
+    #tilbage button:hover {
+        color: black;
+    }
+
+</style>
+
+
+
+<body>
+    <div id="singleview">
+        <div id="tilbage"><button>Tilbage</button></div>
+        <div id="indhold"></div>
+    </div>
+
+    <script>
+        let urlParams = new URLSearchParams(window.location.search);
+        let id = urlParams.get("id");
+        let retter;
+        let ret;
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            async function getJson() {
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1jxxxFoWBuMJ1qhQ9BQIAyKHmP38XtAF9_sQr0xo5JLo");
+                retter = await jsonData.json();
+                retter.forEach(obj => {
+                    if (obj.id == id) {
+                        ret = obj;
+                    }
+                })
+                åbn();
+            }
+
+            function åbn() {
+                document.querySelector("#indhold").innerHTML = `
+                    <article class="ret">
+                        <h2>${ret.navn}</h2>
+                        <img class="billede" src="imgs/large/${ret.billede}.jpg"><br>
+
+
+                        <p>${ret.lang}</p>
+                        <p>${ret.pris},-</p>
+                    </article>
+                    `;
+            }
+            document.querySelector("#tilbage button").addEventListener("click", () => {
+                location.href = "babushka-nyside.html"
+            })
+            getJson();
+        }
+
+    </script>
+    <footer></footer>
+</body>
+
+</html>

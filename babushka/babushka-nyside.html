@@ -9,9 +9,9 @@
 </head>
 
 <body>
-    <div id="splash"></div>
+    <div id="splash">Babushka</div>
 
-    <div class="menu">
+    <nav class="menu">
 
         <button class="filter valgt" data-hold="alle">Alle</button>
         <button class="filter" data-hold="forretter">Foretter</button>
@@ -19,13 +19,17 @@
         <button class="filter" data-hold="desserter">Desserter</button>
         <button class="filter" data-hold="drikkevarer">Drikkevarer</button>
         <button class="filter" data-hold="sideorders">Sideordrer</button>
-    </div>
+    </nav>
 
     <div id="liste">
 
     </div>
 
     <style>
+        body {
+            margin: 0 auto;
+        }
+
         #splash {
             font-size: 10vw;
             font-family: 'Stalinist One', cursive;
@@ -74,69 +78,69 @@
 
         button {
             margin: 5px;
+            background-color: rgba(240, 248, 255, 0);
+            border: 2px solid black;
+            padding: 10px;
+            cursor: grab;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
         }
 
         .valgt {
-            background-color: blueviolet;
+            background-color: black;
+            color: indianred;
         }
     </style>
-
     <script>
-        let alleRetter = [];
-        document.addEventListener("DOMContentLoaded", start);
-        let dest = document.querySelector("#liste");
-        let splash = document.querySelector("#splash");
+        let retter = [];
         let filter = "alle";
+        document.addEventListener("DOMContentLoaded", start);
 
         function start() {
-
+            let dest = document.querySelector("#liste");
             async function getJson() {
                 let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1jxxxFoWBuMJ1qhQ9BQIAyKHmP38XtAF9_sQr0xo5JLo");
-                alleRetter = await jsonData.json();
+                retter = await jsonData.json();
                 visRetter();
             }
 
             function visRetter() {
                 dest.innerHTML = "";
-                alleRetter.forEach(retter => {
-                    if (filter == "alle" || filter == retter.kategori) {
-                        splash.textContent = `Babushka`;
-                        dest.innerHTML += `
-                    <div class="retter">
-                        <h2>${retter.navn}</h2>
-<img src="imgs/small/${retter.billede}-sm.jpg">
-<p>${retter.kort}</p>
-<p>Pris: ${retter.pris},-</p>
-
-<div id="readmore">
-        <p>Læs mere</p></div>
-</div>
-
-`;
+                retter.forEach(ret => {
+                    if (filter == "alle" || filter == ret.kategori) {
+                        let template = `
+                        <article class="retter">
+                            <h2>${ret.navn}</h2>
+                            <img class="billede" src="imgs/small/${ret.billede}-sm.jpg">
+                            <p>${ret.kort}</p>
+                            <br>
+                            <p>${ret.pris}.-</p>
+                        </article>
+                    `;
+                        dest.insertAdjacentHTML("beforeend", template);
+                        dest.lastElementChild.addEventListener("click", () => {
+                            location.href = "singleview.html?id=" + ret.id;
+                        });
                     }
                 })
-
-                document.querySelectorAll(".filter").forEach(elm => {
-                    elm.addEventListener("click", filtrering);
-                })
-
-                function filtrering() {
-                    filter = this.getAttribute("data-hold");
-
-
-                    document.querySelectorAll(".filter").forEach(elm => {
-                        elm.classList.remove("valgt");
-                    })
-
-                    this.classList.add("valgt");
-                    visRetter();
-
-                }
-
             }
-            getJson()
+            //function visPersoner slut
+            document.querySelectorAll(".filter").forEach(elm => {
+                elm.addEventListener("click", filtrering);
+            })
 
-
+            function filtrering() {
+                filter = this.getAttribute("data-kategori");
+                document.querySelectorAll(".filter").forEach(elm => {
+                    elm.classList.remove("valgt");
+                })
+                this.classList.add("valgt");
+                visRetter();
+            }
+            getJson();
         }
     </script>
 </body>
