@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="">
+    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|Tangerine" rel="stylesheet">
+</head>
+
+<body>
+    <h1>Alle</h1>
+    <div class="menu">
+
+        <button class="filter valgt" data-hold="alle">Alle</button>
+        <button class="filter" data-hold="faldende">Faldende</button>
+        <button class="filter" data-hold="stigende">Stigende</button>
+    </div>
+    <div id="liste">
+    </div>
+
+    <style>
+        html {
+            background-color: lavender;
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            margin: 5vw;
+        }
+
+        .dyr {
+            border: 2px dotted grey;
+            margin: 4px;
+            padding: 10px;
+            background-color: ghostwhite
+        }
+
+        img {
+            width: 100%;
+        }
+
+        a {
+            text-decoration: none;
+            color: #9207f8;
+            font-family: 'Tangerine', cursive;
+        }
+
+        h2 {
+            font-family: 'Dancing Script', cursive;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        .valgt {
+            background-color: blueviolet;
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+    <script>
+        let alleDyr = [];
+        document.addEventListener("DOMContentLoaded", start);
+        let filter = "alle";
+
+        function start() {
+            let dest = document.querySelector("#liste");
+            async function getJson() {
+                let jsonData = await fetch("https://mandalskeawebspace.dk/claude_php/clean_up_spreadsheet.php?id=1OLlD_GRoz71piHvnW306omRAyHS7vtLOILQt-K0YF_c");
+                alleDyr = await jsonData.json();
+                dyr.sort((a, b) => {
+                    return a.alder - b.alder
+                })
+                visDyr();
+            }
+
+            function visDyr() {
+                dest.innerHTML = "";
+                alleDyr.forEach(dyr => {
+                    if (filter == "alle" || filter == dyr.alder) {
+                        dest.innerHTML += `
+                    <div class="dyr">
+                        <h2>${dyr.navn}</h2>
+                        <img src= "${dyr.billede}">
+<p>Alder: ${dyr.alder}</p>
+
+                    </div>
+`;
+                    }
+
+                })
+                document.querySelectorAll(".filter").forEach(elm => {
+                    elm.addEventListener("click", filtrering);
+                })
+
+                function filtrering() {
+                    filter = this.getAttribute("data-hold");
+
+                    document.querySelector("h1").textContent = this.textContent;
+
+                    document.querySelectorAll(".filter").forEach(elm => {
+                        elm.classList.remove("valgt");
+                    })
+
+                    this.classList.add("valgt");
+                    visDyr();
+
+                }
+            }
+            getJson()
+        }
+    </script>
+</body>
+
+</html>

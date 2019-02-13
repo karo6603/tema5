@@ -10,13 +10,22 @@
 
 <body>
     <div id="splash"></div>
+
+    <div class="menu">
+
+        <button class="filter valgt" data-hold="alle">Alle</button>
+        <button class="filter" data-hold="forretter">Foretter</button>
+        <button class="filter" data-hold="hovedretter">Hovedretter</button>
+        <button class="filter" data-hold="desserter">Desserter</button>
+    </div>
+
     <div id="liste">
 
     </div>
 
     <style>
         #splash {
-            font-size: 10rem;
+            font-size: 10vw;
             font-family: 'Stalinist One', cursive;
             text-align: center;
             background-color: rgba(205, 92, 92, 0.86);
@@ -24,7 +33,7 @@
 
         #liste {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
             margin: 5vw;
         }
 
@@ -56,6 +65,19 @@
             font-family: 'Cutive Mono', monospace;
         }
 
+        .menu {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin: 5px;
+        }
+
+        .valgt {
+            background-color: blueviolet;
+        }
+
     </style>
 
     <script>
@@ -63,9 +85,7 @@
         document.addEventListener("DOMContentLoaded", start);
         let dest = document.querySelector("#liste");
         let splash = document.querySelector("#splash");
-
-
-
+        let filter = "alle";
 
         function start() {
 
@@ -76,9 +96,11 @@
             }
 
             function visRetter() {
+                dest.innerHTML = "";
                 alleRetter.forEach(retter => {
-                    splash.textContent = `Babushka`;
-                    dest.innerHTML += `
+                    if (filter == "alle" || filter == retter.kategori) {
+                        splash.textContent = `Babushka`;
+                        dest.innerHTML += `
                     <div class="retter">
                         <h2>${retter.navn}</h2>
 <img src="imgs/small/${retter.billede}-sm.jpg">
@@ -90,27 +112,26 @@
 </div>
 
 `;
-
-                    //                    let read = document.querySelector("#readmore");
-                    //                    let forklaring = document.querySelector("#retter p");
-                    //
-                    //
-                    //                    read.addEventListener("click", readMore);
-                    //
-                    //                    function readMore() {
-                    //                        read.removeEventListener("click", readMore);
-                    //                        read.addEventListener("click", readMoreAgain);
-                    //
-                    //                        forklaring.textContent = `${retter.lang}`;
-                    //                    }
-                    //
-                    //                    function readMoreAgain() {
-                    //                        read.addEventListener("click", readMore);
-                    //                        read.removeEventListener("click", readMoreAgain);
-                    //
-                    //                        forklaring.textContent = `${retter.kort}`;
-                    //                    }
+                    }
                 })
+
+                document.querySelectorAll(".filter").forEach(elm => {
+                    elm.addEventListener("click", filtrering);
+                })
+
+                function filtrering() {
+                    filter = this.getAttribute("data-hold");
+
+
+                    document.querySelectorAll(".filter").forEach(elm => {
+                        elm.classList.remove("valgt");
+                    })
+
+                    this.classList.add("valgt");
+                    visRetter();
+
+                }
+
             }
             getJson()
 
