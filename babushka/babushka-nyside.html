@@ -117,7 +117,10 @@
                             <img class="billede" src="imgs/small/${ret.billede}-sm.jpg">
                             <p>${ret.kort}</p>
                             <br>
-                            <p>${ret.pris}.-</p>
+                            <p>Pris: ${ret.pris}.-</p>
+
+                                <div id="readmore">
+                                <p>Læs mere</p></div>
                         </article>
                     `;
                         dest.insertAdjacentHTML("beforeend", template);
@@ -133,7 +136,7 @@
             })
 
             function filtrering() {
-                filter = this.getAttribute("data-kategori");
+                filter = this.getAttribute("data-hold");
                 document.querySelectorAll(".filter").forEach(elm => {
                     elm.classList.remove("valgt");
                 })
