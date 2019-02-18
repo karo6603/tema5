@@ -1,0 +1,185 @@
+[
+    {
+        "navn": "Pappadam",
+        "billede": "pappadum",
+        "kort": "Let krydret, indisk specialitet, papirtynd og sprød serveret med mint, chili og mango chutney.",
+        "lang": "",
+        "pris": "29",
+        "kategori": "forret"
+    }, {
+        "navn": "Samosa",
+        "billede": "samosas",
+        "kort": "Indbagte ærter og kartofler, krydret og friturestegt. Serveres med grøn salat.",
+        "lang": "",
+        "pris": "59",
+        "kategori": "forret"
+    }, {
+        "navn": "Onion Bhaji",
+        "billede": "onion-bhaji",
+        "kort": "Frisk løg dyppet i speciel beignedej og friturestegt, serveres med grøn salat.",
+        "lang": "",
+        "pris": "55",
+        "kategori": "forret"
+    }, {
+        "navn": "Bombay Dal Shorba",
+        "billede": "bombay-dal-shorba",
+        "kort": "Linsesuppe tilsmagt med croutoner.",
+        "lang": "",
+        "pris": "49",
+        "kategori": "suppe"
+    }, {
+        "navn": "Chicken Dal Shorba",
+        "billede": "chicken-dal-shorba",
+        "kort": "Kyllingsuppe tilsmagt med fløde serveret med croutoner.",
+        "lang": "",
+        "pris": "49",
+        "kategori": "suppe"
+    }, {
+        "navn": "Mulligatawny",
+        "billede": "mulligatawny",
+        "kort": "Kyllingsuppe med krydderier, ris og citron.",
+        "lang": "",
+        "pris": "49",
+        "kategori": "suppe"
+    }, {
+        "navn": "Seekh Kebab",
+        "billede": "seekh-kebab",
+        "kort": "Hakket lammekød tilberedt på spyd stegt i Tandooriovn serveret med mynte chutney.",
+        "lang": "",
+        "pris": "99",
+        "kategori": "lam"
+    }, {
+        "navn": "Chicken Tikka Masala",
+        "billede": "tikka-masala",
+        "kort": "Kyllingebryst tilberedt i tandooriovn serveret i masala sovs.",
+        "lang": "",
+        "pris": "115",
+        "kategori": "kylling"
+    }, {
+        "navn": "Shahjani Curry",
+        "billede": "shahjahani-curry",
+        "kort": "Kokkens egen opskrift på kylling i karry.",
+        "lang": "",
+        "pris": "99",
+        "kategori": "kylling"
+    }, {
+        "navn": "Butter Chicken",
+        "billede": "butter-chicken",
+        "kort": "Kylling smørstegt i tandooriovn tilberedt med orientalske krydderier samt tomater.",
+        "lang": "",
+        "pris": "110",
+        "kategori": "kylling"
+    }, {
+        "navn": "Nawabi Murgh",
+        "billede": "nawabi-murgh",
+        "kort": "Muglai specialitet, udbenet kylling i krydret karry serveret med hakket kød og nødder.",
+        "lang": "",
+        "pris": "99",
+        "kategori": "kylling"
+    }, {
+        "navn": "Saag Chicken",
+        "billede": "saag-chicken",
+        "kort": "Udbenede kyllingestykker tilberedt i karry med spinat.",
+        "lang": "",
+        "pris": "99",
+        "kategori": "Kylling"
+    }, {
+        "navn": "Chicken Biryani",
+        "billede": "chicken-tikka-biryani",
+        "kort": "Ris blandet med kylling á la mughali.",
+        "lang": "",
+        "pris": "99",
+        "kategori": "kylling"
+    }, {
+        "navn": "Champ Tandoori",
+        "billede": "tandoori-champ",
+        "kort": "Specialtilberedte indiske lammekoteletter.",
+        "lang": "",
+        "pris": "135",
+        "kategori": "lam"
+    }, {
+        "navn": "Rogan Josh",
+        "billede": "rogan-josh",
+        "kort": "Lammekød i kraftig krydret karry.",
+        "lang": "",
+        "pris": "105",
+        "kategori": "lam"
+    }, {
+        "navn": "Shahi Korma Lahori",
+        "billede": "shahi-korma-lahori",
+        "kort": "Små stykker af udbenet lammekød i mild karry.",
+        "lang": "",
+        "pris": "105",
+        "kategori": "lam"
+    }, {
+        "navn": "Mutten Do Piaza",
+        "billede": "mutten-do-piaza",
+        "kort": "Kokkens egen opskrift på krydret lammekød.",
+        "lang": "",
+        "pris": "105",
+        "kategori": "lam"
+    }, {
+        "navn": "Keema Matter",
+        "billede": "keema-matter",
+        "kort": "Hakket kød med ærter.",
+        "lang": "",
+        "pris": "105",
+        "kategori": "lam"
+    }, {
+        "navn": "Raita",
+        "billede": "raita",
+        "kort": "Agurk og tomat blandet i kærnet yoghurt.",
+        "lang": "",
+        "pris": "35",
+        "kategori": "vegetar"
+    }, {
+        "navn": "Daal",
+        "billede": "daal",
+        "kort": "Kokkens specialitet. Linser stegt i smør.",
+        "lang": "",
+        "pris": "85",
+        "kategori": "vegetar"
+    }, {
+        "navn": "Paneer Makhani",
+        "billede": "paneer-makhani",
+        "kort": "Frisk hytteost i mild flødesovs.",
+        "lang": "",
+        "pris": "85",
+        "kategori": "vegetar"
+    }, {
+        "navn": "Saag Paneer",
+        "billede": "saag-paneer",
+        "kort": "Hytteost med spinat.",
+        "lang": "",
+        "pris": "85",
+        "kategori": "vegetar"
+    }, {
+        "navn": "Chana Masala",
+        "billede": "chana-masala",
+        "kort": "Kikærter tilberedt i vores krydret karrysauce.",
+        "lang": "",
+        "pris": "85",
+        "kategori": "vegetar"
+    }, {
+        "navn": "Ris",
+        "billede": "rice",
+        "kort": "Ekstra ris.",
+        "lang": "",
+        "pris": "29",
+        "kategori": "ekstra"
+    }, {
+        "navn": "Naan brød",
+        "billede": "naan",
+        "kort": "Tandooribrød med gær, smør, æg og hvedemel.",
+        "lang": "",
+        "pris": "30",
+        "kategori": "ekstra"
+    }, {
+        "navn": "Mango Chutney",
+        "billede": "mango-chutney",
+        "kort": "Sød mango chutney.",
+        "lang": "",
+        "pris": "15",
+        "kategori": "ekstra"
+    }
+]

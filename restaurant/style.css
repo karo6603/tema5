@@ -1,0 +1,112 @@
+body {
+            margin: 0 auto;
+        }
+
+        #splash {
+            font-size: 10vw;
+            font-family: 'Stalinist One', cursive;
+            text-align: center;
+            background-color: rgba(205, 92, 92, 0.86);
+        }
+
+        #liste {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+            margin: 5vw;
+        }
+
+        .retter {
+            margin: 4px;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-content: space-between;
+        }
+
+        img {
+            width: 400px;
+            height: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        h2 {
+            font-family: 'Share Tech Mono', monospace;
+        }
+
+        p {
+            font-family: 'Roboto', sans-serif;
+        }
+
+        #readmore p {
+            font-family: 'Cutive Mono', monospace;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+        }
+
+        button {
+            margin: 5px;
+            background-color: rgba(240, 248, 255, 0);
+            border: 2px solid black;
+            padding: 10px;
+            cursor: grab;
+        }
+
+        button:hover {
+            background-color: black;
+            color: white;
+        }
+
+        .valgt {
+            background-color: black;
+            color: indianred;
+        }
+
+        #popup {
+            width: 70vw;
+            height: 85vh;
+            position: fixed;
+            background-color: white;
+            border: 2px solid black;
+            display: none;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        #indhold {
+            box-sizing: border-box;
+            background-color: rgba(188, 64, 64, 0.67);
+            width: 60vw;
+            height: 70vh;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            position: fixed;
+        }
+
+        #luk {
+            box-sizing: border-box;
+            text-align: right;
+        }
+
+        #luk button {
+            font-size: 2em;
+            background-color: rgba(240, 248, 255, 0);
+            border: none;
+            cursor: grab;
+            padding: 0px;
+            margin-right: 15px;
+        }
+
+        #luk button:hover {
+            color: indianred;
+        }
+
+        #readmore {
+            cursor: grab;
+        }
