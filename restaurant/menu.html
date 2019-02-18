@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css?family=Eczar|Gurajada|Raleway" rel="stylesheet">
 </head>
 
 <body>
+
     <nav>
         <div id="left"><a href="index.html">Hjem</a>
             <a href="menu.html">Menu</a>
@@ -18,15 +19,31 @@
             <a href="lokation.html">Lokationer</a></div>
     </nav>
 
-    <div id="content">
-        <div id="address">
-            <h1>LYNGBY HOVEDGADE 84,<br>
-                2800 KGS. LYNGBY</h1>
-        </div>
-        <div id="dish"></div>
 
+    <div id="popup">
+        <div id="luk"><button>x</button></div>
+        <div id="indhold"></div>
+    </div>
+
+    <div id="splash"></div>
+
+    <div class="menu">
+
+        <button class="filter valgt" data-kategori="alle">Alle</button>
+        <button class="filter" data-kategori="forret">Foretter</button>
+        <button class="filter" data-kategori="suppe">Supper</button>
+        <button class="filter" data-kategori="kylling">Kylling</button>
+        <button class="filter" data-kategori="lam">Lam</button>
+        <button class="filter" data-kategori="vegetar">Vegetar</button>
+        <button class="filter" data-kategori="ekstra">Ekstra</button>
+    </div>
+
+    <div id="liste">
+
+    </div>
+
+    <div id="content">
         <div id="text">
-            <h2>ÅBEN 10-20 HVER DAG</h2>
 
             <ul>
                 <li><a href="menu.html">Menu</a></li>
@@ -39,7 +56,7 @@
         </div>
     </div>
 
-
-
 </body>
+
 </html>
+<script src="script.js"></script>

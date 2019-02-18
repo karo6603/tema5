@@ -1,112 +1,200 @@
 body {
-            margin: 0 auto;
-        }
+    margin: 0 auto;
+    border: 10px solid #e0a207;
+}
 
-        #splash {
-            font-size: 10vw;
-            font-family: 'Stalinist One', cursive;
-            text-align: center;
-            background-color: rgba(205, 92, 92, 0.86);
-        }
+h1,
+h2 {
+    font-family: 'Eczar', serif;
+    text-align: center;
+}
 
-        #liste {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
-            margin: 5vw;
-        }
+p {
+    font-family: 'Raleway', sans-serif;
+}
 
-        .retter {
-            margin: 4px;
-            padding: 10px;
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-content: space-between;
-        }
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 59px 20px;
+}
 
-        img {
-            width: 400px;
-            height: 300px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+nav a {
+    text-decoration: none;
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    font-size: 2vw;
+    padding: 10px;
+}
 
-        h2 {
-            font-family: 'Share Tech Mono', monospace;
-        }
+nav #logo {
+    background-image: url(billeder/SVG/logo.svg);
+    width: 20vw;
+    height: 9vw;
+    background-repeat: no-repeat;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 90px;
+    left: 50%;
+}
 
-        p {
-            font-family: 'Roboto', sans-serif;
-        }
+#left {
+    float: left;
+}
 
-        #readmore p {
-            font-family: 'Cutive Mono', monospace;
-        }
+#right {
+    float: right;
+}
 
-        .menu {
-            display: flex;
-            justify-content: center;
-        }
+#dish {
+    background-image: url(billeder/SVG/dish.svg);
+    width: 70vw;
+    height: 70vw;
 
-        button {
-            margin: 5px;
-            background-color: rgba(240, 248, 255, 0);
-            border: 2px solid black;
-            padding: 10px;
-            cursor: grab;
-        }
+}
 
-        button:hover {
-            background-color: black;
-            color: white;
-        }
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 90px;
+    margin-bottom: 60px;
+}
 
-        .valgt {
-            background-color: black;
-            color: indianred;
-        }
+#content a {
+    color: black;
+    font-family: 'Raleway', sans-serif;
+    margin: 10px;
+}
 
-        #popup {
-            width: 70vw;
-            height: 85vh;
-            position: fixed;
-            background-color: white;
-            border: 2px solid black;
-            display: none;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
+#content ul {
+    display: flex;
+    flex-direction: row;
+}
 
-        #indhold {
-            box-sizing: border-box;
-            background-color: rgba(188, 64, 64, 0.67);
-            width: 60vw;
-            height: 70vh;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            position: fixed;
-        }
+#content li {
+    margin: 10px;
+}
 
-        #luk {
-            box-sizing: border-box;
-            text-align: right;
-        }
+#content li:first-child {
+    list-style: none;
+}
 
-        #luk button {
-            font-size: 2em;
-            background-color: rgba(240, 248, 255, 0);
-            border: none;
-            cursor: grab;
-            padding: 0px;
-            margin-right: 15px;
-        }
+#historie {
+    max-width: 70%;
+    text-align: justify;
+    margin: 50px;
+}
 
-        #luk button:hover {
-            color: indianred;
-        }
+#food {
+    background-image: url(mad/mad.jpg);
+    width: 100%;
+    height: 50vw;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-top: 50px;
+}
 
-        #readmore {
-            cursor: grab;
-        }
+
+
+#liste {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    margin: 5vw;
+}
+
+.retter {
+    margin: 4px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-content: space-between;
+}
+
+.retter img {
+    object-fit: contain;
+    width: 100%;
+    height: 400px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+}
+
+#readmore p {
+    font-family: 'Eczar', serif;
+}
+
+button {
+    margin: 5px;
+    background-color: rgba(240, 248, 255, 0);
+    border: 1px solid goldenrod;
+    padding: 10px;
+    cursor: grab;
+}
+
+button:hover {
+    background-color: goldenrod;
+    color: white;
+}
+
+.valgt {
+    background-color: goldenrod;
+    color: white;
+}
+
+#popup {
+    width: 70vw;
+    height: 85vh;
+    position: fixed;
+    background-color: white;
+    border: 2px solid goldenrod;
+    display: none;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#indhold {
+    box-sizing: border-box;
+    background-color: white;
+    width: 60vw;
+    height: 70vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+}
+
+#indhold img {
+    object-fit: contain;
+    width: 100%;
+    height: 300px;
+}
+
+#luk {
+    box-sizing: border-box;
+    text-align: right;
+}
+
+#luk button {
+    font-size: 2em;
+    background-color: rgba(240, 248, 255, 0);
+    border: none;
+    cursor: grab;
+    padding: 0px;
+    margin-right: 15px;
+}
+
+#luk button:hover {
+    color: indianred;
+}
+
+#readmore {
+    cursor: grab;
+}
