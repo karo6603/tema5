@@ -1,6 +1,8 @@
+/*GENERELT*/
+
 body {
     margin: 0 auto;
-    border: 10px solid #e0a207;
+    border: 10px solid #D7863A;
 }
 
 h1,
@@ -13,6 +15,10 @@ p {
     font-family: 'Raleway', sans-serif;
 }
 
+
+
+/*NAV*/
+
 nav {
     display: flex;
     flex-direction: row;
@@ -24,7 +30,7 @@ nav a {
     text-decoration: none;
     color: black;
     font-family: 'Raleway', sans-serif;
-    font-size: 2vw;
+    font-size: 1rem;
     padding: 10px;
     cursor: pointer;
 }
@@ -47,6 +53,80 @@ nav #logo {
 #right {
     float: right;
 }
+
+
+#burger {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: 10px;
+}
+
+#lillelogo {
+    background-image: url(billeder/SVG/logo.svg);
+    width: 250px;
+    height: 80px;
+    background-repeat: no-repeat;
+}
+
+.dropbtn {
+    color: white;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn div {
+    width: 35px;
+    height: 3px;
+    background-color: #8B3A09;
+    margin: 6px 0;
+}
+
+.dropbtn:hover,
+.dropbtn:focus {
+    background-color: white;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    max-width: 110px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    font-family: 'Raleway', sans-serif;
+
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    cursor: pointer;
+}
+
+.dropdown a:hover {
+    background-color: #ddd;
+}
+
+.show {
+    display: block;
+}
+
+
+
+
+
+/*FORSIDE*/
 
 #dish {
     background-image: url(billeder/SVG/dish.svg);
@@ -83,6 +163,11 @@ nav #logo {
     list-style: none;
 }
 
+
+
+
+/*HISTORIE*/
+
 #historie {
     max-width: 70%;
     text-align: justify;
@@ -98,6 +183,10 @@ nav #logo {
     margin-top: 50px;
 }
 
+
+
+
+/*MENU*/
 
 
 #liste {
@@ -135,18 +224,18 @@ nav #logo {
 button {
     margin: 5px;
     background-color: rgba(240, 248, 255, 0);
-    border: 1px solid goldenrod;
+    border: 1px solid #8B3A09;
     padding: 10px;
     cursor: pointer;
 }
 
 button:hover {
-    background-color: goldenrod;
+    background-color: #8B3A09;
     color: white;
 }
 
 .valgt {
-    background-color: goldenrod;
+    background-color: #8B3A09;
     color: white;
 }
 
@@ -202,6 +291,11 @@ button:hover {
 }
 
 
+
+
+
+/*RESERVATION*/
+
 input[type=text],
 select,
 textarea {
@@ -216,17 +310,18 @@ textarea {
 }
 
 input[type=submit] {
-    background-color: goldenrod;
-    color: white;
+    background-color: white;
+    color: black;
     padding: 12px 20px;
-    border: none;
+    border: 1px solid #8B3A09;
     border-radius: 4px;
     cursor: pointer;
 }
 
 
 input[type=submit]:hover {
-    background-color: goldenrod;
+    background-color: #8B3A09;
+    color: white;
 }
 
 #date input {
@@ -244,13 +339,75 @@ input[type=submit]:hover {
     font-family: 'Raleway', sans-serif;
 }
 
+
+
+
+/*LOKATION*/
+
 #locations {
     margin-bottom: 50px;
 }
 
-#kort {
-    background-image: url(billeder/SVG/map.svg);
-    width: 70%;
-    height: 300px;
-    margin-bottom: 50px;
+
+
+
+/*MEDIAQUERIES*/
+
+@media only screen and (max-width: 700px) {
+    nav {
+        display: none
+    }
+
+    #burger {
+        display: flex;
+    }
+
+    h1,
+    h2 {
+        font-size: 1.4rem;
+    }
+
+    #content ul {
+        display: none;
+    }
+
+    #content {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    #historie {
+        max-width: 90%;
+        margin: 10px;
+        margin-top: 0;
+    }
+
+    #food {
+        margin-top: 0;
+        height: 220px;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu button {
+        margin: 3px;
+        width: 80px;
+    }
+
+    #liste {
+        margin: 0;
+    }
+
+    .retter {
+        margin: 0;
+        width: 90%;
+    }
+
+    .retter img {
+        height: 200px;
+        margin: 0;
+    }
 }

@@ -20,7 +20,6 @@ function start() {
                             <div class="retter">
                                 <h2>${enkeltRet.navn}</h2>
                                 <img src="mad/${enkeltRet.billede}.jpg">
-                                <p>${enkeltRet.kort}</p>
                                 <p>Pris: ${enkeltRet.pris},-</p>
 
                                 <div id="readmore">
@@ -37,7 +36,7 @@ function start() {
                             <div class="retter">
                                 <h2>${enkeltRet.navn}</h2>
                                 <img src="mad/${enkeltRet.billede}.jpg">
-                                <p>${enkeltRet.lang}</p>
+                                <p>${enkeltRet.kort}</p>
                                 <p>Pris: ${enkeltRet.pris},-</p>
 
                                 </div>

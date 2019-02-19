@@ -5,21 +5,21 @@
         "kort": "Let krydret, indisk specialitet, papirtynd og sprød serveret med mint, chili og mango chutney.",
         "lang": "",
         "pris": "29",
-        "kategori": "forret"
+        "kategori": "ekstra"
     }, {
         "navn": "Samosa",
         "billede": "samosas",
         "kort": "Indbagte ærter og kartofler, krydret og friturestegt. Serveres med grøn salat.",
         "lang": "",
         "pris": "59",
-        "kategori": "forret"
+        "kategori": "ekstra"
     }, {
         "navn": "Onion Bhaji",
         "billede": "onion-bhaji",
         "kort": "Frisk løg dyppet i speciel beignedej og friturestegt, serveres med grøn salat.",
         "lang": "",
         "pris": "55",
-        "kategori": "forret"
+        "kategori": "ekstra"
     }, {
         "navn": "Bombay Dal Shorba",
         "billede": "bombay-dal-shorba",

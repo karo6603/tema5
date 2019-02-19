@@ -16,8 +16,26 @@
             <a href="historie.html">Historie</a></div>
         <div id="logo"></div>
         <div id="right"><a href="reserver.html">Reservation</a>
-            <a href="lokation.html">Lokationer</a></div>
+            <a href="lokation.html">Lokation</a></div>
     </nav>
+
+    <div id="burger">
+        <div id="lillelogo"></div>
+        <div class="dropdown">
+            <button class="dropbtn">
+                <div></div>
+                <div></div>
+                <div></div>
+            </button>
+            <div id="myDropdown" class="dropdown-content">
+                <a href="index.html">Hjem</a>
+                <a href="menu.html">Menu</a>
+                <a href="historie.html">Historie</a>
+                <a href="reserver.html">Reservation</a>
+                <a href="lokation.html">Lokation</a>
+            </div>
+        </div>
+    </div>
 
 
     <div id="popup">
@@ -25,17 +43,16 @@
         <div id="indhold"></div>
     </div>
 
-    <div id="splash"></div>
-
     <div class="menu">
 
-        <button class="filter valgt" data-kategori="alle">Alle</button>
-        <button class="filter" data-kategori="forret">Foretter</button>
-        <button class="filter" data-kategori="suppe">Supper</button>
-        <button class="filter" data-kategori="kylling">Kylling</button>
-        <button class="filter" data-kategori="lam">Lam</button>
-        <button class="filter" data-kategori="vegetar">Vegetar</button>
-        <button class="filter" data-kategori="ekstra">Ekstra</button>
+        <div id="top"><button class="filter valgt" data-kategori="alle">Alle</button>
+            <button class="filter" data-kategori="suppe">Supper</button>
+            <button class="filter" data-kategori="kylling">Kylling</button></div>
+        <div id="bottom">
+            <button class="filter" data-kategori="lam">Lam</button>
+            <button class="filter" data-kategori="vegetar">Vegetar</button>
+            <button class="filter" data-kategori="ekstra">Ekstra</button>
+        </div>
     </div>
 
     <div id="liste">
@@ -49,7 +66,7 @@
                 <li><a href="menu.html">Menu</a></li>
                 <li><a href="historie.html">Historie</a></li>
                 <li><a href="reserver.html">Reservation</a></li>
-                <li><a href="lokation.html">Lokationer</a></li>
+                <li><a href="lokation.html">Lokation</a></li>
             </ul>
 
             <h2>+45 30 28 31 04</h2>
@@ -60,3 +77,4 @@
 
 </html>
 <script src="script.js"></script>
+<script src="burger.js"></script>
