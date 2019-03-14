@@ -52,6 +52,17 @@
 
     </div>
 
+
+    <script>
+        let values = [50, 80, 30];
+
+        let bars = document.querySelectorAll(".bar");
+
+        bars.forEach((bar, i) => {
+            bar.setAttribute("y2", (200 - (1.80 * values[i])));
+        })
+    </script>
+
 </body>
 
 </html>
