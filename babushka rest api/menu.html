@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Forside</a>
+        <a href="omos.html">Om os</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="menu.html">Menu</a>
+    </nav>
+    <h1 class="overskrift">Retter</h1>
+
+    <main class="retter"></main>
+
+    <template>
+        <section class="ret">
+            <h2></h2>
+            <div class="billede"></div>
+            <div class="kort"></div>
+            <div class="pris"></div>
+        </section>
+    </template>
+
+    <script>
+        let retter = [];
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            async function getJson() {
+                let url = "https://karolinekrogsboell.dk/sheeshmahal/wordpress/wp-json/wp/v2/ret";
+                let jsonData = await fetch(url);
+                retter = await jsonData.json();
+                visRetter();
+            }
+
+            function visRetter() {
+
+                let dest = document.querySelector(".retter");
+                let temp = document.querySelector("template");
+
+                retter.forEach(ret => {
+                    let klon = temp.cloneNode(true).content;
+                    klon.querySelector("h2").innerHTML = ret.title.rendered;
+                    klon.querySelector(".kort").innerHTML = ret.kort;
+                    klon.querySelector(".billede").innerHTML = `<img src="${ret.billede.guid}">`;
+                    klon.querySelector(".pris").innerHTML = ret.pris;
+                    dest.appendChild(klon);
+                })
+            }
+            getJson();
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <nav>
+        <a href="index.html">Forside</a>
+        <a href="omos.html">Om os</a>
+        <a href="kontakt.html">Kontakt</a>
+        <a href="menu.html">Menu</a>
+    </nav>
+    <h1 class="overskrift"></h1>
+
+    <main class="indhold"></main>
+
+    <script>
+        let indhold;
+        document.addEventListener("DOMContentLoaded", start);
+
+        function start() {
+            async function getJson() {
+                let url = "https://karolinekrogsboell.dk/sheeshmahal/wordpress/wp-json/wp/v2/pages/116";
+                let jsonData = await fetch(url);
+                indhold = await jsonData.json();
+                visIndhold();
+            }
+
+            function visIndhold() {
+                document.querySelector(".overskrift").textContent = indhold.title.rendered;
+                document.querySelector(".indhold").innerHTML = indhold.content.rendered;
+            }
+            getJson();
+        }
+    </script>
+
+</body>
+
+</html>
